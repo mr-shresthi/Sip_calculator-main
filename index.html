@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    </head>
+
+    <body class="body-background" style="background-color :beige;">
+
+        <div class="header" style="font-weight: bold; padding-top: 1%;"><h1>Mutual Fund Investment Calculator</h1></div>
+        <img src="image1.jpeg" alt="sip image" style=" margin : 2% 8%;">
+
+        <div class="page-container">
+
+            <div class="switch-container">
+
+                <div class="radio-button">
+                    <label for="sip">SIP</label>
+                    <input type="radio" checked name="checked" value="SIP">
+                    <label for="lumpsum">LumpSum</label>
+                    <input type="radio" name="checked" value="LumpSum">
+                </div>
+                <div class="dropdown">
+                    Currency
+                    <select onchange="currencyChange(this)" id="currency" class="currency">
+                        <!-- &#8377; -->
+                        <option value="Rs">&#8377; &nbsp;INR</option>
+                        
+                        <!-- &#x24; -->
+                    </select>
+            </div>
+        </div>
+            <div class="input-container" >
+                <div>
+                    <div>Monthly Investment &#10067 </div>
+                    <br/>
+                    <div><input id="investment" type="text" onchange="commas(this)"/></div>
+                    <br/>
+                    <div>Number of Years &#10067</div>
+                    <br/>
+                    <div><input id="years" type="number"></div> 
+                    <br/>
+                    <div>Expected Rate of Return &#10067</div>
+                    <br/>
+                    <div><input id="return-rate"  type="text" onchange="percentage(this)")/></div> 
+                </div>
+            </div>
+            </br/>
+            <div class="btn-calculate">
+                <button type="button" onclick="calculateResult()" style="margin-right : 17%">
+                    Calculate
+                </button>
+                <br><br><hr>
+            </div>
+            </br/>
+            <div style="display: flex; ">
+                <div class="result" style="font-weight: bold;">Result :</div>
+              <div class="result-container">
+                    <div>Monthly Investment for <span id="mode-1">SIP</span></div>
+                    <br/>
+                    <div><span>Rs.</span>&nbsp;<span id="input-1"></span></div>
+                    <br/>
+                    <div>Number of Years <span id="mode-2">SIP</span></div>
+                    <br/>
+                    <div><span>Years:</span>&nbsp;<span id="input-2"></span></div> 
+                    <br/>
+                    <div>Expected Rate of Return <span id="mode-3">SIP</span></div>
+                    <br/>
+                    <div><span>%:</span>&nbsp;<span id="input-3"></span></div> 
+            </div>
+            <div class="result-container">
+                <div>Total Investment 💸</div>
+                <br/>
+                <div><span id="currency-change-1">Rs.</span>&nbsp;<span id="total"></span></div>
+                <br/>
+                <div>Wealth Gained 💸</div>
+                <br/>
+                <div><span id="currency-change-2">Rs.</span>&nbsp;<span id="wealth-gained"></span></div> 
+                <br/>
+                <div>Maturity Value 💸</div>
+                <br/>
+                <div><span id="currency-change-3">Rs.</span>&nbsp;<span id="maturity-value"></span></div> 
+        </div>
+    </div>
+            <br/>
+            
+        </div>
+    </div>
+      <script src="main.js"></script>
+    </body>
+</html>
